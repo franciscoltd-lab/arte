@@ -1,0 +1,7 @@
+{
+  "name": "arte",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
