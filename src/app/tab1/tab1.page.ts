@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 })
 export class Tab1Page {
 
-  selection: 'artista' | 'restaurante' | null = null;
+  selection: string | null = null;
 
   constructor(
     private selectionService: SelectionService,
@@ -20,6 +20,8 @@ export class Tab1Page {
   ngOnInit() {
     this.selection = this.selectionService.getSelection();
 
+    console.warn('Tab1', this.selection);
+    
     if (!this.selection) {
       this.router.navigate(['/']); // protección adicional
     }

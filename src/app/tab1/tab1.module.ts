@@ -1,5 +1,5 @@
 import { IonicModule } from '@ionic/angular';
-import { NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Tab1Page } from './tab1.page';
@@ -8,7 +8,6 @@ import { ExploreContainerComponentModule } from '../explore-container/explore-co
 import { Tab1PageRoutingModule } from './tab1-routing.module';
 import { ArtistaComponent } from '../components/artista/artista.component';
 import { RestauranteComponent } from '../components/restaurante/restaurante.component';
-
 @NgModule({
   imports: [
     IonicModule,
@@ -16,9 +15,9 @@ import { RestauranteComponent } from '../components/restaurante/restaurante.comp
     FormsModule,
     ExploreContainerComponentModule,
     Tab1PageRoutingModule,
-    ArtistaComponent,
-    RestauranteComponent
   ],
-  declarations: [Tab1Page]
+  declarations: [Tab1Page, ArtistaComponent, RestauranteComponent],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
+
 })
 export class Tab1PageModule {}

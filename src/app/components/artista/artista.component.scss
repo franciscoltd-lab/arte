@@ -1,0 +1,39 @@
+.banner-slide {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+  background: #f1f1f1;
+  padding: 0 16px;
+}
+
+.banner-text h2 {
+  font-size: 1.2rem;
+  margin: 0;
+}
+
+.banner-image {
+  width: 100px;
+  height: auto;
+  object-fit: contain;
+}
+
+
+.btn-link {
+  display: flex;
+  align-items: center;   /* Alinea verticalmente texto e ícono */
+  gap: 6px;              /* Espacio entre texto e ícono */
+  background: black;
+  color: white;
+  border: none;
+  font-size: 14px;
+  cursor: pointer;
+  width: 90%;
+  margin: 2rem auto;
+}
+
+.btn-link .icon,
+.btn-link ion-icon {
+  font-size: 1em;        /* Asegura tamaño coherente */
+  line-height: 1;
+}

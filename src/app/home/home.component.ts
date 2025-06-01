@@ -19,6 +19,7 @@ export class HomeComponent {
 
   handleClick(selection: 'artista' | 'restaurante') {
     this.selectionService.setSelection(selection);
+    console.warn(selection)
 
     if (this.isFading) return;
     this.isFading = true;

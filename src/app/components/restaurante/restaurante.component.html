@@ -1,3 +1,48 @@
-<p>
-  restaurante works!
-</p>
+<ion-searchbar></ion-searchbar>
+
+<!-- EVENTOS -->
+<swiper-container slides-per-view="1" pagination="true" navigation="false" space-between="10"
+  style="width: 90%; height: 200px; border-radius: 10px; overflow: hidden;">
+  <swiper-slide *ngFor="let banner of banners">
+    <div class="banner-slide">
+      <div class="banner-text">
+        <h2 style="color: black; font-weight: bold;">{{ banner.title }}</h2>
+      </div>
+      <img [src]="banner.image" class="banner-image" />
+    </div>
+  </swiper-slide>
+</swiper-container>
+
+<div class="btn-link">
+  <span>Establecimientos</span>
+  <ion-icon name="chevron-forward-outline"></ion-icon>
+</div>
+
+<div class="container">
+  @for (artist of artists; track $index) {
+  <div class="artist">
+    <ion-avatar>
+      <img alt="Avatar" [src]="artist.image" />
+    </ion-avatar>
+    <ion-label>{{ artist.name }}</ion-label>
+  </div>
+  }
+</div>
+
+<div class="btn-link">
+  <span>Pinturas</span>
+  <ion-icon name="chevron-forward-outline"></ion-icon>
+</div>
+
+<!-- Obras -->
+<swiper-container slides-per-view="2.5" pagination="false" navigation="false" space-between="10"
+  style="width: 90%; height: 150px; overflow: hidden;" sty>
+  <swiper-slide *ngFor="let banner of banners">
+    <div class="banner-slide">
+      <div class="banner-text">
+        <h2 style="color: black; font-weight: bold;">{{ banner.title }}</h2>
+      </div>
+      <img [src]="banner.image" class="banner-image" />
+    </div>
+  </swiper-slide>
+</swiper-container>
