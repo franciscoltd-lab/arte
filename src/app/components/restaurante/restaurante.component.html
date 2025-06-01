@@ -1,20 +1,29 @@
-<ion-searchbar></ion-searchbar>
+<!-- <ion-header>
+</ion-header> -->
 
-<!-- EVENTOS -->
-<swiper-container slides-per-view="1" pagination="true" navigation="false" space-between="10"
-  style="width: 90%; height: 200px; border-radius: 10px; overflow: hidden;">
+<div style="padding-top: 15%;" mode="ios">
+  <ion-searchbar style="width: 95%;margin: 0 auto; margin-bottom: 1.5rem;"></ion-searchbar>
+</div>
+
+<div class="btn-link">
+  <span>Obras destacadas</span>
+  <ion-icon name="chevron-forward-outline"></ion-icon>
+</div>
+
+<!-- Destacados -->
+<swiper-container *ngIf="banners.length > 0" slides-per-view="1" pagination="true" navigation="false" space-between="10"
+  style="width: 90%; height: 200px; border-radius: 12px; overflow: hidden;">
   <swiper-slide *ngFor="let banner of banners">
-    <div class="banner-slide">
+    <div class="banner-slide" [style.backgroundImage]="getSanitizedUrl(banner.image)">
       <div class="banner-text">
-        <h2 style="color: black; font-weight: bold;">{{ banner.title }}</h2>
+        <h2>{{ banner.title }}</h2>
       </div>
-      <img [src]="banner.image" class="banner-image" />
     </div>
   </swiper-slide>
 </swiper-container>
 
 <div class="btn-link">
-  <span>Establecimientos</span>
+  <span>Artistas</span>
   <ion-icon name="chevron-forward-outline"></ion-icon>
 </div>
 
@@ -36,13 +45,15 @@
 
 <!-- Obras -->
 <swiper-container slides-per-view="2.5" pagination="false" navigation="false" space-between="10"
-  style="width: 90%; height: 150px; overflow: hidden;" sty>
+  style="width: 90%; height: 250px; overflow: hidden;">
   <swiper-slide *ngFor="let banner of banners">
-    <div class="banner-slide">
-      <div class="banner-text">
-        <h2 style="color: black; font-weight: bold;">{{ banner.title }}</h2>
+    <div class="">
+      <img [src]="banner.image" class="banner-image" style="border-radius: 15px;" />
+      <div class="banner-info">
+        <p class="categoria">{{ banner.categoria }}</p>
+        <h3 class="titulo">{{ banner.title }}</h3>
+        <p class="precio">{{ banner.precio | currency:'MXN' }}</p>
       </div>
-      <img [src]="banner.image" class="banner-image" />
     </div>
   </swiper-slide>
 </swiper-container>
