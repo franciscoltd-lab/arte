@@ -1,0 +1,47 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/tabs/home" text=""></ion-back-button>
+    </ion-buttons>
+    <ion-title>Regístrate o Inicia Sesión</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="ion-padding login-screen">
+  <div class="logo"  style="margin-top: 30%;">
+    <h1>QUETZART</h1>
+  </div>
+
+  <div class="subtitle">
+    <h2>Crea una cuenta</h2>
+    <p>Ingresa tu correo para registrarte en esta app.</p>
+  </div>
+
+  <ion-item lines="none" class="input-email">
+    <ion-input placeholder="email@domain.com" type="email"></ion-input>
+  </ion-item>
+
+  <ion-button expand="block" class="continue-button" color="dark">
+    Continuar
+  </ion-button>
+
+  <div class="divider">
+    <div class="line"></div>
+    <div class="or">o</div>
+    <div class="line"></div>
+  </div>
+
+  <ion-button expand="block" fill="outline" class="social-button google">
+    <ion-icon slot="start" name="logo-google"></ion-icon>
+    Continúa con Google
+  </ion-button>
+
+  <ion-button expand="block" fill="outline" class="social-button apple">
+    <ion-icon slot="start" name="logo-apple"></ion-icon>
+    Continúa con Apple
+  </ion-button>
+
+  <p class="disclaimer">
+    Haciendo click en continuar, estar de acuerdo con nuestros
+    <a href="#">Términos de servicio</a> y <a href="#">Políticas de Privacidad</a>.
+  </p>
+</ion-content>

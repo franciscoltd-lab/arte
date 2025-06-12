@@ -1,0 +1,71 @@
+<ion-content class="ion-padding">
+  <h2 style="margin-top: 20%;">Iván M. Padilla</h2>
+  <div class="artist-header" style="display: flex;">
+    <ion-avatar class="artist-avatar">
+      <img src="assets/img/Artistas/Ivan M. Padilla/thumbnail.jpg" />
+    </ion-avatar>
+    <p class="description">
+      Por más de 6 años me he dedicado a tomar danza cubriendo galas, recitales,
+      festivales y presentaciones artísticas.
+    </p>
+  </div>
+
+  <div class="section">
+    <div class="section-header">
+      <h3>Obras actuales expuestas</h3>
+      <ion-icon name="chevron-forward-outline"></ion-icon>
+    </div>
+    <swiper-container slides-per-view="2.5" space-between="10">
+      <swiper-slide *ngFor="let obra of obrasExpuestas">
+        <div class="obra-card">
+          <img [src]="obra.image" class="obra-img" />
+          <div class="obra-info">
+            <p class="categoria">{{ obra.categoria }}</p>
+            <p class="titulo">{{ obra.titulo }}</p>
+          </div>
+        </div>
+      </swiper-slide>
+    </swiper-container>
+  </div>
+
+  <div class="section">
+    <div class="section-header">
+      <h3>Obras presentadas</h3>
+      <ion-icon name="chevron-forward-outline"></ion-icon>
+
+    </div>
+    <swiper-container slides-per-view="2.5" space-between="10">
+      <swiper-slide *ngFor="let obra of obrasPasadas">
+        <div class="obra-card">
+          <img [src]="obra.image" class="obra-img" />
+          <div class="obra-info">
+            <p class="categoria">{{ obra.categoria }}</p>
+            <p class="titulo">{{ obra.titulo }}</p>
+          </div>
+        </div>
+      </swiper-slide>
+    </swiper-container>
+  </div>
+</ion-content>
+
+<ion-footer>
+  <ion-tabs>
+    <ion-tab-bar slot="bottom">
+      <ion-tab-button tab="home">
+        <ion-icon name="home-outline"></ion-icon>
+      </ion-tab-button>
+      <ion-tab-button tab="search">
+        <ion-icon name="search-outline"></ion-icon>
+      </ion-tab-button>
+      <ion-tab-button tab="upload">
+        <ion-icon name="add-circle-outline"></ion-icon>
+      </ion-tab-button>
+      <ion-tab-button tab="notifications">
+        <ion-icon name="notifications-outline"></ion-icon>
+      </ion-tab-button>
+      <ion-tab-button tab="profile">
+        <ion-icon name="person-outline"></ion-icon>
+      </ion-tab-button>
+    </ion-tab-bar>
+  </ion-tabs>
+</ion-footer>

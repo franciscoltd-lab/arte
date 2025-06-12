@@ -1,0 +1,59 @@
+<!-- <ion-header>
+</ion-header> -->
+
+<div style="padding-top: 15%;" mode="ios">
+  <ion-searchbar style="width: 95%;margin: 0 auto; margin-bottom: 1.5rem;"></ion-searchbar>
+</div>
+
+<div class="btn-link" (click)="login()">
+  <span>Obras destacadas</span>
+  <ion-icon name="chevron-forward-outline"></ion-icon>
+</div>
+
+<!-- Destacados -->
+<swiper-container *ngIf="banners.length > 0" slides-per-view="1" pagination="true" navigation="false" space-between="10"
+  style="width: 90%; height: 200px; border-radius: 12px; overflow: hidden;">
+  <swiper-slide *ngFor="let banner of banners" (click)="showArtwork()">
+    <div class="banner-slide" [style.backgroundImage]="getSanitizedUrl(banner.image)">
+      <div class="banner-text">
+        <h2>{{ banner.title }}</h2>
+      </div>
+    </div>
+  </swiper-slide>
+</swiper-container>
+
+<div class="btn-link" (click)="login()">
+  <span>Artistas</span>
+  <ion-icon name="chevron-forward-outline"></ion-icon>
+</div>
+
+<div class="container">
+  @for (artist of artists; track $index) {
+  <div class="artist" (click)="showProfile()">
+    <ion-avatar>
+      <img alt="Avatar" [src]="artist.image" />
+    </ion-avatar>
+    <ion-label>{{ artist.name }}</ion-label>
+  </div>
+  }
+</div>
+
+<div class="btn-link" (click)="login()">
+  <span>Pinturas</span>
+  <ion-icon name="chevron-forward-outline"></ion-icon>
+</div>
+
+<!-- Obras -->
+<swiper-container slides-per-view="2.5" pagination="false" navigation="false" space-between="10"
+  style="width: 90%; height: 250px; overflow: hidden;">
+  <swiper-slide *ngFor="let banner of banners" (click)="login()">
+    <div class="">
+      <img [src]="banner.image" class="banner-image" style="border-radius: 15px;" />
+      <div class="banner-info">
+        <p class="categoria">{{ banner.categoria }}</p>
+        <h3 class="titulo">{{ banner.title }}</h3>
+        <p class="precio">{{ banner.precio | currency:'MXN' }}</p>
+      </div>
+    </div>
+  </swiper-slide>
+</swiper-container>

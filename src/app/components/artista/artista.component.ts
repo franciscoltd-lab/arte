@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
+import { ModalController } from '@ionic/angular';
 import { IonSearchbar } from "@ionic/angular/standalone";
+import { LoginComponent } from '../login/login.component';
 
 @Component({
   selector: 'app-artista',
@@ -8,15 +10,18 @@ import { IonSearchbar } from "@ionic/angular/standalone";
   standalone: false
 })
 export class ArtistaComponent {
+
+  private readonly modalCtrl = inject(ModalController);
+
   banners = [
     {
-      title: 'Promo 1',
-      image: 'https://via.placeholder.com/100x100'
+      title: 'Evento en Centenario Café',
+      titulo: 'Centenario Café',
+      image: 'assets/img/Establecimientos/Centenario Café/4.jpg',
+      image2: 'assets/img/Establecimientos/Centenario Café/3.jpg',
+      categoria: 'Cafetería',
+      precio: 5000
     },
-    {
-      title: 'Promo 2',
-      image: 'https://via.placeholder.com/100x100?text=2'
-    }
   ];
 
   ngAfterViewInit() {
@@ -24,6 +29,21 @@ export class ArtistaComponent {
     customElements.whenDefined('swiper-container').then(() => {
       console.log('Swiper container ready');
     });
+  }
+
+  getSanitizedUrl(url: string): string {
+    return `url('${encodeURI(url)}')`;
+  }
+
+  async login() {
+    const modal = await this.modalCtrl.create({
+      component: LoginComponent,
+      cssClass: 'login-modal-class',
+      showBackdrop: true,
+      backdropDismiss: true
+    });
+
+    await modal.present();
   }
 
 }

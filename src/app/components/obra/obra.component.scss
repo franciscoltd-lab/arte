@@ -1,0 +1,61 @@
+.image {
+  position: relative;
+  display: inline-block;
+}
+
+.image img {
+  width: 100%; /* o un ancho fijo */
+  display: block;
+}
+
+.floating-icon {
+  position: absolute;
+  color: white; /* o el color que quieras */
+  font-size: 24px;
+  z-index: 2;
+  padding: 8px;
+  background: rgba(0, 0, 0, 0.4); /* opcional para visibilidad */
+  border-radius: 50%;
+}
+
+/* Icono de compartir en la esquina superior derecha */
+.share {
+  top: 8px;
+  right: 8px;
+}
+
+/* Icono de corazón en la esquina inferior derecha */
+.heart {
+  bottom: 8px;
+  right: 8px;
+}
+
+.price{
+
+    .head{
+        height: 20px;
+        width: 100%;
+        background-color: rgba(238, 198, 194, 0.705);
+    }
+    width: 90%;
+    margin: 0 auto;
+    border: 1px solid rgba(253, 213, 209, 0.719);
+    border-radius: 5px;
+
+    h2{
+        margin-left: 1rem;
+        font-size: xx-large;
+        font-weight: bold;
+        text-align: start;
+    }
+}
+
+.description{
+    width: 90%;
+    margin: 0 auto;
+}
+
+.buttons{
+    width: 90%;
+    margin: 0 auto;
+}

@@ -1,40 +1,39 @@
-<ion-searchbar></ion-searchbar>
+<div style="padding-top: 15%;" >
+  <ion-searchbar style="width: 95%;margin: 0 auto; margin-bottom: 1rem;" mode="ios"></ion-searchbar>
+</div>
 
+<div class="btn-link" (click)="login()">
+  <span>Eventos</span>
+  <ion-icon name="chevron-forward-outline"></ion-icon>
+</div>
 <!-- EVENTOS -->
-<swiper-container slides-per-view="1" pagination="true" navigation="false" space-between="10"
-  style="width: 90%; height: 200px; border-radius: 10px; overflow: hidden;">
-  <swiper-slide *ngFor="let banner of banners">
-    <div class="banner-slide">
+<swiper-container *ngIf="banners.length > 0" slides-per-view="1" pagination="true" navigation="false" space-between="10"
+  style="width: 90%; height: 200px; border-radius: 12px; overflow: hidden;">
+  <swiper-slide *ngFor="let banner of banners" (click)="login()">
+    <div class="banner-slide" [style.backgroundImage]="getSanitizedUrl(banner.image)">
       <div class="banner-text">
-        <h2 style="color: black; font-weight: bold;">{{ banner.title }}</h2>
+        <h2>{{ banner.title }}</h2>
       </div>
-      <img [src]="banner.image" class="banner-image" />
     </div>
   </swiper-slide>
 </swiper-container>
 
 
-<div class="btn-link">
+<div class="btn-link" (click)="login()">
   <span>Establecimientos</span>
   <ion-icon name="chevron-forward-outline"></ion-icon>
 </div>
 
 <!-- Espacios -->
-<div style="width: 90%; margin: 0 auto;">
-  <swiper-container slides-per-view="1" pagination="true" navigation="false" space-between="10"
-    style="width: 100%; height: 400px; border-radius: 10px; overflow: hidden;">
-    <swiper-slide *ngFor="let banner of banners">
-      <div class="banner-slide">
-        <div class="banner-text">
-          <h2 style="color: black; font-weight: bold;">{{ banner.title }}</h2>
-        </div>
-        <img [src]="banner.image" class="banner-image" />
+<swiper-container slides-per-view="1" pagination="false" navigation="false" space-between="10"
+  style="width: 90%; overflow: hidden;">
+  <swiper-slide *ngFor="let banner of banners" (click)="login()">
+    <div class="" >
+      <img [src]="banner.image2" class="banner-image" style="border-radius: 15px;" />
+      <div class="banner-info">
+        <p class="categoria">{{ banner.categoria }}</p>
+        <h3 class="titulo">{{ banner.titulo }}</h3>
       </div>
-    </swiper-slide>
-  </swiper-container>
-  <div class="body" style="margin-top: 1rem;">
-      <p class="small-text">Categoría</p>
-      <p class="normal-text">Nombre del establecimiento</p>
-      <p> {{ '02/05/2025' | date }}</p>
-  </div>
-</div>
+    </div>
+  </swiper-slide>
+</swiper-container>

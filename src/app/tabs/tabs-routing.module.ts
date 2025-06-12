@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { TabsPage } from './tabs.page';
 import { tabsAccessGuard } from '../guards/tabs-access.guard';
+import { authGuard } from '../guards/auth.guard';
 
 const routes: Routes = [
   {
@@ -9,24 +10,30 @@ const routes: Routes = [
     component: TabsPage,
     children: [
       {
-        path: 'tab1',
-        canActivate: [tabsAccessGuard],
-        loadChildren: () => import('../tab1/tab1.module').then(m => m.Tab1PageModule)
+        path: 'home',
+        // canActivate: [tabsAccessGuard],
+        loadChildren: () => import('../home/home.module').then(m => m.Tab1PageModule)
       },
       {
-        path: 'tab2',
-        canActivate: [tabsAccessGuard],
-        loadChildren: () => import('../tab2/tab2.module').then(m => m.Tab2PageModule)
+        path: 'cart',
+        canActivate: [authGuard],
+        loadChildren: () => import('../cart/cart.module').then(m => m.CartPageModule)
       },
       {
-        path: 'tab3',
-        loadChildren: () => import('../tab3/tab3.module').then(m => m.Tab3PageModule)
+        path: 'messages',
+        canActivate: [authGuard],
+        loadChildren: () => import('../messsages/messsages.module').then(m => m.MesssagesPageModule)
       },
       {
         path: '',
-        redirectTo: 'tab1', // ✅ correcto sin /
+        redirectTo: 'home', // ✅ correcto sin /
         pathMatch: 'full'
-      }
+      },
+      {
+        path: 'profile',
+        canActivate: [authGuard],
+        loadChildren: () => import('../profile/profile.module').then(m => m.ProfilePageModule)
+      },
     ]
   },
   {
