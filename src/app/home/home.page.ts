@@ -23,13 +23,11 @@ export class HomePage {
   ngOnInit() {
     this.selectionService.getSelectionObservable().subscribe(selection => {
       this.selection = selection;
-      // console.warn('Tab1 actualizado:', selection);
 
       if (!this.selection) {
         this.router.navigate(['/']);
       }
 
-      // Aquí puedes disparar lógica para actualizar el HTML
     });
   }
 

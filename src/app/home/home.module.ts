@@ -20,4 +20,4 @@ import { EstablecimientoComponent } from '../components/establecimiento/establec
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 
 })
-export class Tab1PageModule {}
+export class HomePageModule {}

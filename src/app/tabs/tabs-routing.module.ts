@@ -12,17 +12,21 @@ const routes: Routes = [
       {
         path: 'home',
         // canActivate: [tabsAccessGuard],
-        loadChildren: () => import('../home/home.module').then(m => m.Tab1PageModule)
+        loadChildren: () => import('../home/home.module').then(m => m.HomePageModule)
       },
       {
         path: 'cart',
-        canActivate: [authGuard],
+        // canActivate: [authGuard],
         loadChildren: () => import('../cart/cart.module').then(m => m.CartPageModule)
       },
       {
         path: 'messages',
-        canActivate: [authGuard],
+        // canActivate: [authGuard],
         loadChildren: () => import('../messsages/messsages.module').then(m => m.MesssagesPageModule)
+      },
+      {
+        path: 'map',
+        loadChildren: () => import('../map/map.module').then(m => m.MapPageModule)
       },
       {
         path: '',
@@ -31,7 +35,7 @@ const routes: Routes = [
       },
       {
         path: 'profile',
-        canActivate: [authGuard],
+        // canActivate: [authGuard],
         loadChildren: () => import('../profile/profile.module').then(m => m.ProfilePageModule)
       },
     ]

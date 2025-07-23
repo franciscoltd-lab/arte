@@ -10,18 +10,8 @@ import { AuthService } from '../services/auth.service';
   standalone: false,
 })
 export class TabsPage {
-
-  private readonly selectionService = inject(SelectionService);
-  private readonly router = inject(Router);
   private readonly authService = inject(AuthService);
 
-  logOut() {
-    let selection = this.selectionService.getSelection();
-
-    selection = selection == 'artista' ? 'restaurante' : 'artista';
-    this.selectionService.setSelection(selection);
-
-  }
 
   isLogedIn(): boolean{
     return this.authService.isLogedIn();

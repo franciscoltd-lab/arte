@@ -6,18 +6,18 @@ import { LoginComponent } from './components/login/login.component';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'selection',
+    redirectTo: 'tabs',
     pathMatch: 'full'
   },
   {
     path: 'tabs',
     loadChildren: () => import('./tabs/tabs.module').then(m => m.TabsPageModule)
   },
-  {
-    path: 'selection',
-    component: SelectionComponent
+  // {
+  //   path: 'selection',
+  //   component: SelectionComponent
 
-  },
+  // },
   {
     path: 'login',
     component: LoginComponent
@@ -29,6 +29,10 @@ const routes: Routes = [
   {
     path: 'cart',
     loadChildren: () => import('./cart/cart.module').then( m => m.CartPageModule)
+  },
+  {
+    path: 'map',
+    loadChildren: () => import('./map/map.module').then( m => m.MapPageModule)
   }
 
 ];

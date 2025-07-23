@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/establecimientos"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <img [src]="establecimiento.imagen" alt="Imagen del lugar" />
+    <ion-card-header>
+      <ion-card-title>{{ establecimiento.nombre }}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <p>{{ establecimiento.direccion }}</p>
+    </ion-card-content>
+  </ion-card>
+
+  <div class="map-container">
+    <iframe
+      [src]="establecimiento.mapa"
+      width="100%"
+      height="250"
+      frameborder="0"
+      style="border:0;"
+      allowfullscreen
+      loading="lazy">
+    </iframe>
+  </div>
+</ion-content>

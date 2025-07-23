@@ -24,12 +24,12 @@ export class ArtistaComponent {
     },
   ];
 
-  ngAfterViewInit() {
-    // Asegura que el Swiper Web Component esté definido
-    customElements.whenDefined('swiper-container').then(() => {
-      console.log('Swiper container ready');
-    });
-  }
+  // ngAfterViewInit() {
+  //   // Asegura que el Swiper Web Component esté definido
+  //   customElements.whenDefined('swiper-container').then(() => {
+  //     console.log('Swiper container ready');
+  //   });
+  // }
 
   getSanitizedUrl(url: string): string {
     return `url('${encodeURI(url)}')`;
@@ -45,5 +45,6 @@ export class ArtistaComponent {
 
     await modal.present();
   }
+  
 
 }

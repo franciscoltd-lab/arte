@@ -3,6 +3,9 @@ import { ModalController } from '@ionic/angular';
 import { LoginComponent } from '../login/login.component';
 import { ProfilePage } from 'src/app/profile/profile.page';
 import { ObraComponent } from '../obra/obra.component';
+import { ListaArtistasComponent } from '../lista-artistas/lista-artistas.component';
+import { ListaEstablecimientosComponent } from '../lista-establecimientos/lista-establecimientos.component';
+import { ProfileEstablecimientoComponent } from '../profile-establecimiento/profile-establecimiento.component';
 
 @Component({
   selector: 'app-establecimiento',
@@ -113,6 +116,39 @@ export class EstablecimientoComponent {
     await modal.present();
   }
 
+  async showListArtist(){
+    const modal = await this.modalCtrl.create({
+      component: ListaArtistasComponent,
+      cssClass: 'login-modal-class',
+      showBackdrop: true,
+      backdropDismiss: true
+    });
+
+    await modal.present();
+  
+  }
+
+  async showListEstablecimiento(){
+    const modal = await this.modalCtrl.create({
+      component: ListaEstablecimientosComponent,
+      cssClass: 'login-modal-class',
+      showBackdrop: true,
+      backdropDismiss: true
+    });
+
+    await modal.present();
+  }
+
+  async showProfileEstablecimiento(){
+      const modal = await this.modalCtrl.create({
+      component: ProfileEstablecimientoComponent,
+      cssClass: 'login-modal-class',
+      showBackdrop: true,
+      backdropDismiss: true
+    });
+
+    await modal.present();
+  }
 }
 
 

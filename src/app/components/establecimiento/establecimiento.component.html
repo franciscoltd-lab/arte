@@ -1,19 +1,19 @@
 <!-- <ion-header>
 </ion-header> -->
 
-<div style="padding-top: 15%;" mode="ios">
+<!-- <div style="padding-top: 15%;" mode="ios">
   <ion-searchbar style="width: 95%;margin: 0 auto; margin-bottom: 1.5rem;"></ion-searchbar>
-</div>
+</div> -->
 
 <div class="btn-link" (click)="login()">
-  <span>Obras destacadas</span>
+  <span>Eventos</span>
   <ion-icon name="chevron-forward-outline"></ion-icon>
 </div>
 
 <!-- Destacados -->
 <swiper-container *ngIf="banners.length > 0" slides-per-view="1" pagination="true" navigation="false" space-between="10"
   style="width: 90%; height: 200px; border-radius: 12px; overflow: hidden;">
-  <swiper-slide *ngFor="let banner of banners" (click)="showArtwork()">
+  <swiper-slide *ngFor="let banner of banners">
     <div class="banner-slide" [style.backgroundImage]="getSanitizedUrl(banner.image)">
       <div class="banner-text">
         <h2>{{ banner.title }}</h2>
@@ -22,7 +22,7 @@
   </swiper-slide>
 </swiper-container>
 
-<div class="btn-link" (click)="login()">
+<div class="btn-link" (click)="showListArtist()">
   <span>Artistas</span>
   <ion-icon name="chevron-forward-outline"></ion-icon>
 </div>
@@ -38,15 +38,15 @@
   }
 </div>
 
-<div class="btn-link" (click)="login()">
-  <span>Pinturas</span>
+<div class="btn-link" (click)="showListEstablecimiento()">
+  <span>Establecimiientos</span>
   <ion-icon name="chevron-forward-outline"></ion-icon>
 </div>
 
 <!-- Obras -->
 <swiper-container slides-per-view="2.5" pagination="false" navigation="false" space-between="10"
   style="width: 90%; height: 250px; overflow: hidden;">
-  <swiper-slide *ngFor="let banner of banners" (click)="login()">
+  <swiper-slide *ngFor="let banner of banners" (click)="showProfileEstablecimiento()">
     <div class="">
       <img [src]="banner.image" class="banner-image" style="border-radius: 15px;" />
       <div class="banner-info">

@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
+import { ModalController } from '@ionic/angular';
 import { IonContent, IonButton, IonItem } from "@ionic/angular/standalone";
 
 @Component({
@@ -11,6 +12,12 @@ export class LoginComponent  implements OnInit {
 
   constructor() { }
 
+  private readonly modalCtrl = inject(ModalController);
+
   ngOnInit() {}
+
+  closeModal(){
+    this.modalCtrl.dismiss();
+  }
 
 }

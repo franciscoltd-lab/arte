@@ -1,0 +1,12 @@
+ion-segment {
+  margin: 16px;
+}
+
+ion-item {
+  --min-height: 72px;
+}
+
+ion-avatar img,
+ion-thumbnail img {
+  object-fit: cover;
+}

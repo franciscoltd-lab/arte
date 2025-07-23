@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Establecimientos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-searchbar [(ngModel)]="textoBusqueda" placeholder="Buscar..."></ion-searchbar>
+
+  <ion-list>
+    <ion-item *ngFor="let establecimiento of establecimientosFiltrados()">
+      <ion-thumbnail slot="start">
+        <img [src]="establecimiento.imagen" />
+      </ion-thumbnail>
+      <ion-label>
+        <h2>{{ establecimiento.nombre }}</h2>
+        <p>{{ establecimiento.categoria }}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>
